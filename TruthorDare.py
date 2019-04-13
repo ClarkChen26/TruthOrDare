@@ -20,7 +20,38 @@ class Ui_MainWindow(object):
             self.textBrowser.setFontPointSize(100)
             self.textBrowser.setText(name)
             self.textBrowser.setAlignment(QtCore.Qt.AlignCenter)
-
+    def regular_truth(self):
+        with open('r_truth') as f:
+            name_list = f.read().splitlines()
+            name = random.choice(name_list)
+            QtWidgets.qApp.processEvents()
+            self.textBrowser.setFontPointSize(70)
+            self.textBrowser.setText(name)
+            self.textBrowser.setAlignment(QtCore.Qt.AlignCenter)
+    def regular_dare(self):
+        with open('r_dare') as f:
+            name_list = f.read().splitlines()
+            name = random.choice(name_list)
+            QtWidgets.qApp.processEvents()
+            self.textBrowser.setFontPointSize(70)
+            self.textBrowser.setText(name)
+            self.textBrowser.setAlignment(QtCore.Qt.AlignCenter)
+    def hot_truth(self):
+        with open('name') as f:
+            name_list = f.read().splitlines()
+            name = random.choice(name_list)
+            QtWidgets.qApp.processEvents()
+            self.textBrowser.setFontPointSize(100)
+            self.textBrowser.setText(name)
+            self.textBrowser.setAlignment(QtCore.Qt.AlignCenter)
+    def hot_dare(self):
+        with open('name') as f:
+            name_list = f.read().splitlines()
+            name = random.choice(name_list)
+            QtWidgets.qApp.processEvents()
+            self.textBrowser.setFontPointSize(100)
+            self.textBrowser.setText(name)
+            self.textBrowser.setAlignment(QtCore.Qt.AlignCenter)
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1680, 1005)
@@ -77,6 +108,7 @@ class Ui_MainWindow(object):
         self.line_4.setObjectName("line_4")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(270, 300, 261, 131))
+        self.pushButton.clicked.connect(self.regular_truth)
         font = QtGui.QFont()
         font.setPointSize(60)
         self.pushButton.setFont(font)
@@ -87,6 +119,7 @@ class Ui_MainWindow(object):
         self.textBrowser.setObjectName("textBrowser")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(550, 480, 261, 131))
+        self.pushButton_2.clicked.connect(self.regular_dare)
         font = QtGui.QFont()
         font.setPointSize(60)
         self.pushButton_2.setFont(font)
@@ -94,6 +127,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(890, 300, 261, 131))
+        self.pushButton_3.clicked.connect(self.hot_truth)
         font = QtGui.QFont()
         font.setPointSize(60)
         font.setBold(False)
@@ -104,6 +138,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_4.setGeometry(QtCore.QRect(1180, 480, 261, 131))
+        self.pushButton_4.clicked.connect(self.hot_dare)
         font = QtGui.QFont()
         font.setPointSize(60)
         font.setItalic(True)
