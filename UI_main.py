@@ -21,9 +21,6 @@ class Ui_MainWindow(object):
             self.textBrowser_3.setText(name)
             self.textBrowser_3.setAlignment(QtCore.Qt.AlignCenter)
             
-            
-            
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1054, 917)
